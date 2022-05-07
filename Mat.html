@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Mat.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mali&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/a4abcd9167.js" crossorigin="anonymous"></script>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<title>ARTisan</title>
+<body>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class="fa-solid fa-palette"></i>
+      <span class="logo_name">ARTisan</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <span class="link_name">Home</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index.html">Home</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="Mat.html">
+           <i class="fa-solid fa-pencil"></i>
+            <span class="link_name">Materials</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="Mat.html">Materials</a></li>
+          <li><a href="Mat.html " id="Trad">Traditional</a></li>
+          <li><a href="Mat.html " id="Digi">Digital</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="Tutorial.html">
+            <i class="fa-solid fa-photo-film"></i>
+            <span class="link_name">Tutorials</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="Tutorial.html">Tutorials</a></li>
+          <li><a href="Tutorial.html" id="Vid">Video</a></li>
+          <li><a href="Tutorial.html" id="Img"> Image</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="whiteboard.html">
+          <i class="fa-solid fa-chalkboard"></i>
+          <span class="link_name">Whiteboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="whiteboard.html">Whiteboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="Challenges.html">
+            <i class="fa-solid fa-bullseye"></i>
+            <span class="link_name">Challenges</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="Challenges.html">Challenges</a></li>
+          <li><a href="Challenges.html" id="Topic">Topic Generator</a></li>
+          <li><a href="Challenges.html" id="Img">Image Generator</a></li>
+          <li><a href="Challenges.html" id="Prompt">Prompt List</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="About.html">
+          <i class="fa-solid fa-people-group"></i>
+          <span class="link_name">About us</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="About.html">About us</a></li>
+        </ul>
+      </li>
+  </div>
+
+<section class="home-section">
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text">Material</span>
+    </div>
+</section>
+
+<div class="Des">
+  <h4>Wanna draw but not yet certain what medium and materials to use? We have it here in our mARTerials for you to skim and choose what you should start of with.</h4>
+
+  <div id="Trad">
+    <h2>Traditional</h2>
+    <p>Click the arrows or the images below to see the information.</p>
+  </div>
+</div>
+
+
+<!-- Container for the image gallery -->
+<div class="container">
+
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="M/Pencil.png" style="width:65%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="M/Pen_Pentel.png" style="width:65%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="M/Crayons.png" style="width:65%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="M/Paint.png" style="width:65%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="M/Brushes.png" style="width:65%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="M/Paper_Canvas.png" style="width:65%">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="M/Pencil.png" style="width:100%" onclick="currentSlide(1)" alt="Pencil">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="M/Pen_Pentel.png" style="width:100%" onclick="currentSlide(2)" alt="Pen & Pentel">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="M/Crayons.png" style="width:100%" onclick="currentSlide(3)" alt="Crayon">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="M/Paint.png" style="width:100%" onclick="currentSlide(4)" alt="Paint">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="M/Brushes.png" style="width:100%" onclick="currentSlide(5)" alt="Brush">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="M/Paper_Canvas.png" style="width:100%" onclick="currentSlide(6)" alt="Paper Canvas">
+    </div>
+  </div>
+
+  <div id="Digi">
+    <h2>Digital</h2>
+    <p>Hover over the image to see the information.</p>
+      <div class="container">
+        <img src="M/7.png" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text"><img src="M/Digitizer Tablet.png"></div>
+        </div>
+      </div>
+      <div class="container">
+        <img src="M/9.png" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text"><img src="M/Stylus.png"></div>
+        </div>
+      </div>
+      <div class="container">
+        <img src="M/11.png" alt="Avatar" class="image">
+        <div class="overlay">
+          <div class="text"><img src="M/Application.png"></div>
+        </div>
+      </div><br><br><br><br><br><br><br><br><br>
+
+      <center>
+  <div class="Footer">
+    <i class="fa-brands fa-facebook"></i>
+    <i class="fa-brands fa-twitter"></i>
+    <i class="fa-solid fa-phone"></i>
+    <i class="fa-solid fa-envelope"></i>
+    <i class="fa-brands fa-instagram"></i>
+    <p>©2022 ARTisan All Rights Reserved</p>
+    <p>Contact us | FAQs | Terms | Privacy</p>
+  </div>
+</center>
+  </div>
+</div>
+</div>
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="ARTISANGENERATOR.js"></script>
+  <script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script>
+</body>
+</html>

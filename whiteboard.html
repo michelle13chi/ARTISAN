@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet"type="text/css"href="whiteboard.css">
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<script src="https://kit.fontawesome.com/a4abcd9167.js" crossorigin="anonymous"></script>
+<title>Whiteboard</title>
+<style media="screen">
+body, html{
+
+margin: 0;
+padding: 0;
+  border: 0;
+  outline: 0;
+-ms-overflow-style: none;
+scrollbar-width: none;
+  cursor: crosshair;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.S{
+position: fixed;
+left: 70%;
+top: 1%;
+width: 5%;
+}
+
+.C{
+position: fixed;
+left: 80%;
+top: 1%;
+width: 5%;
+
+}
+
+.B{
+position: fixed;
+left: 90%;
+top: 1%;
+width: 5%;
+
+}
+</style>
+</head>
+<body>
+  <div class="sidebar close">
+    <div class="logo-details">
+      <i class="fa-solid fa-palette"></i>
+      <span class="logo_name">ARTisan</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="index.html">
+          <i class="fa-solid fa-house"></i>
+          <span class="link_name">Home</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index.html">Home</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="Mat.html">
+           <i class="fa-solid fa-pencil"></i>
+            <span class="link_name">Materials</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="Mat.html">Materials</a></li>
+          <li><a href="Trad">Traditional</a></li>
+          <li><a href="Digi">Digital</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="Tutorial.html">
+            <i class="fa-solid fa-photo-film"></i>
+            <span class="link_name">Tutorials</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="Tutorial.html">Tutorials</a></li>
+          <li><a href="Vid">Video</a></li>
+          <li><a href="Img">Image</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="whiteboard.html">
+          <i class="fa-solid fa-chalkboard"></i>
+          <span class="link_name">Whiteboard</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="whiteboard.html">Whiteboard</a></li>
+        </ul>
+      </li>
+      <li>
+        <div class="iocn-link">
+          <a href="Challenges.html">
+            <i class="fa-solid fa-bullseye"></i>
+            <span class="link_name">Challenges</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="Challenges.html">Challenges</a></li>
+          <li><a href="Topic">Topic Generator</a></li>
+          <li><a href="Image">Image Generator</a></li>
+          <li><a href="Prompt">Prompt List</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="About.html">
+          <i class="fa-solid fa-people-group"></i>
+          <span class="link_name">About us</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="About.html">About us</a></li>
+        </ul>
+      </li>
+  </div>
+<input onchange ="getThing()" type="color" id="C" class="C" value="#000000">
+<input onchange ="getThing()" type="number" id="S" class="S"value="5">
+<input onclick ="clearAll()" type="button" id="B" class="B" >
+
+<canvas id="canvas"></canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+var ctx = canvas.getContext("2d");
+
+function getThing() {
+	var getC = document.getElementById("C").value;
+	var getS = document.getElementById("S").value;
+
+	return {
+		getC, getS
+	};
+}
+
+function clearAll(){
+	canvas.width = canvas.width;
+}
+
+function draw(e) {
+	if (drawing == false) return;
+	let editor = getThing();
+	ctx.lineWidth = editor.getS;
+	ctx.strokeStyle = editor.getC;
+	ctx.lineCap ="round";
+	ctx.lineTo(e.clientX, e.clientY);
+	ctx.moveTo(e.clientX, e.clientY);
+	ctx.stroke();
+
+}
+
+function startDraw(e) {
+	drawing = true;
+	draw(e);
+}
+
+function overDraw() {
+	drawing = false;
+	ctx.beginPath();
+}
+
+canvas.addEventListener("mousedown", startDraw);
+canvas.addEventListener("mouseup", overDraw);
+canvas.addEventListener("mousemove", draw);
+</script>
+
+</body>
+</html>
